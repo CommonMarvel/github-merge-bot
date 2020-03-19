@@ -1,4 +1,4 @@
-package com.github.merge.bot
+package commonmarvel.github.merge.bot
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
