@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component
 @Component
 class CheckPRList : Loggable {
 
-    @Scheduled(cron = "0/30 * * * * ?")
-    fun fetchPRList() {
-        logger.info("Hello world")
-    }
+  @Scheduled(cron = "0/30 * * * * ?")
+  fun fetchPRList() {
+    logger.info("Hello world")
+  }
 }

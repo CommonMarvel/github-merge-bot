@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class GithubMergeBotApplication
 
 fun main(args: Array<String>) {
-	runApplication<GithubMergeBotApplication>(*args)
+  runApplication<GithubMergeBotApplication>(*args)
 }
