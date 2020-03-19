@@ -20,8 +20,10 @@ apply(plugin = "org.jlleitschuh.gradle.ktlint")
 
 dependencies {
   implementation("org.springframework.boot:spring-boot-starter")
+  implementation("org.springframework.boot:spring-boot-starter-web")
   implementation("org.jetbrains.kotlin:kotlin-reflect")
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+  implementation("com.squareup.okhttp3:okhttp:4.1.0")
   testImplementation("org.springframework.boot:spring-boot-starter-test") {
     exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
   }
