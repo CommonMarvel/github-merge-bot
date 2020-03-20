@@ -49,7 +49,7 @@ jib {
     image = "openjdk:11-jre-slim"
   }
   to {
-    image = "registry.hub.docker.com/commonmarvel/${project.name}:$version"
+    image = "registry.hub.docker.com/commonmarvel/${project.name}:latest"
   }
   container {
     creationTime = "USE_CURRENT_TIMESTAMP"
