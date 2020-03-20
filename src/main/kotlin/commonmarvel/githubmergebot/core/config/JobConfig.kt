@@ -1,4 +1,4 @@
-package commonmarvel.github.merge.bot.core.config
+package commonmarvel.githubmergebot.core.config
 
 import org.springframework.context.annotation.Configuration
 import org.springframework.scheduling.annotation.EnableScheduling

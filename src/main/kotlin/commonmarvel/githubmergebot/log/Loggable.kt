@@ -1,4 +1,4 @@
-package commonmarvel.github.merge.bot.log
+package commonmarvel.githubmergebot.log
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory

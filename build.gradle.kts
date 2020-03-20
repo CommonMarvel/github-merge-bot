@@ -8,12 +8,13 @@ plugins {
   kotlin("plugin.spring") version "1.3.61"
 }
 
-group = "com.github.merge"
+group = "commonmarvel.githubmergebot"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
   mavenCentral()
+  maven("https://dl.bintray.com/puni-tw/maven")
 }
 
 apply(plugin = "org.jlleitschuh.gradle.ktlint")
@@ -24,6 +25,8 @@ dependencies {
   implementation("org.jetbrains.kotlin:kotlin-reflect")
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
   implementation("com.squareup.okhttp3:okhttp:4.1.0")
+  implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+  implementation("puni:kotlin-common-jackson:0.0.70")
   testImplementation("org.springframework.boot:spring-boot-starter-test") {
     exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
   }

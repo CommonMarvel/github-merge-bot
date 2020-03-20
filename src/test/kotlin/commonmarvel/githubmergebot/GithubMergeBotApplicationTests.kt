@@ -1,4 +1,4 @@
-package commonmarvel.github.merge.bot
+package commonmarvel.bot
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

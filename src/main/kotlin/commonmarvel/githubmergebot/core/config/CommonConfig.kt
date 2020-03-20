@@ -1,4 +1,4 @@
-package commonmarvel.github.merge.bot.core.config
+package commonmarvel.githubmergebot.core.config
 
 import okhttp3.OkHttpClient
 import org.springframework.context.annotation.Bean
