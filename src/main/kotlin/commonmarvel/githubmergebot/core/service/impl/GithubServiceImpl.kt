@@ -7,6 +7,7 @@ import commonmarvel.githubmergebot.core.data.dto.SearchPullRequest
 import commonmarvel.githubmergebot.core.data.dto.SearchPullRequestItem
 import commonmarvel.githubmergebot.core.properties.GithubProperties
 import commonmarvel.githubmergebot.core.service.GithubService
+import java.net.URI
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpHeaders
 import org.springframework.http.RequestEntity
@@ -14,7 +15,6 @@ import org.springframework.stereotype.Service
 import org.springframework.web.client.RestTemplate
 import org.springframework.web.client.exchange
 import puni.extension.jackson.jsonStringToObject
-import java.net.URI
 
 @Service
 class GithubServiceImpl(
@@ -69,12 +69,14 @@ class GithubServiceImpl(
         exchange<String>(
           RequestEntity.put(URI.create("${githubProperties.baseURL}/repos/${pr.head.repo.full_name}/pulls/${pr.number}/merge"))
             .header(HttpHeaders.AUTHORIZATION, "token ${githubProperties.token}")
-            .body(PullRequestMergeRequest(
-              pr.title,
-              "Auto merge #${pr.number}",
-              pr.head.sha,
-              if (isDefaultBranch) "squash" else "merge"
-            ))
+            .body(
+              PullRequestMergeRequest(
+                pr.title,
+                "Auto merge #${pr.number}",
+                pr.head.sha,
+                if (isDefaultBranch) "squash" else "merge"
+              )
+            )
         )
       }
   }
