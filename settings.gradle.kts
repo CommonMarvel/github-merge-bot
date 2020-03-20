@@ -1,1 +1,1 @@
-rootProject.name = "bot"
+rootProject.name = "github-merge-bot"

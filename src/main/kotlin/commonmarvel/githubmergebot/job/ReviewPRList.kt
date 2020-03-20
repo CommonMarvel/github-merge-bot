@@ -12,8 +12,9 @@ class ReviewPRList(
   @Autowired val githubService: GithubService
 ) : Loggable {
 
-  @Scheduled(cron = "0 * * * * ?")
+  @Scheduled(fixedDelay = 120000)
   fun fetchPRList() {
+    logger.info("========= Start review PRs ===========")
     githubService.searchPullRequestList()
       .forEach { item ->
         githubService.getPullRequest(item.pull_request.url)
@@ -27,5 +28,6 @@ class ReviewPRList(
             }
           }
       }
+      .let { logger.info("========= Finish review PRs ===========") }
   }
 }
