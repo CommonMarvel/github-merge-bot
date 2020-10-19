@@ -64,6 +64,7 @@ class GithubServiceImpl(
 
   override fun mergePullRequest(pr: PullRequest) {
     val isDefaultBranch = pr.base.ref == pr.head.repo.default_branch
+    val label = "labels=${pr.labels.joinToString()}"
     restTemplate
       .run {
         exchange<String>(
@@ -72,7 +73,7 @@ class GithubServiceImpl(
             .body(
               PullRequestMergeRequest(
                 pr.title,
-                "Auto merge #${pr.number}",
+                "$label , Auto merge #${pr.number}",
                 pr.head.sha,
                 if (isDefaultBranch) "squash" else "merge"
               )

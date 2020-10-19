@@ -14,6 +14,10 @@ data class PullRequestBase(
   val ref: String
 )
 
+data class Label(
+  val name: String
+)
+
 enum class MergeableState {
   behind,
   blocked,
@@ -30,5 +34,6 @@ data class PullRequest(
   val title: String,
   val head: PullRequestHead,
   val base: PullRequestBase,
-  val mergeable_state: MergeableState?
+  val mergeable_state: MergeableState?,
+  val labels: List<Label>
 )
