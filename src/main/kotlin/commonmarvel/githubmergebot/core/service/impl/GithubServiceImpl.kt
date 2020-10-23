@@ -64,11 +64,7 @@ class GithubServiceImpl(
 
   override fun mergePullRequest(pr: PullRequest) {
     val isDefaultBranch = pr.base.ref == pr.head.repo.default_branch
-    val label = "labels=${
-      pr.labels.joinToString {
-        it.name
-      }
-    }"
+    val label = "labels=${pr.labels.joinToString { it.name }}"
     restTemplate
       .run {
         exchange<String>(
