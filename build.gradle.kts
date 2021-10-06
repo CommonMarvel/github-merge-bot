@@ -27,7 +27,6 @@ dependencies {
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
   implementation("com.squareup.okhttp3:okhttp:4.1.0")
   implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-  implementation("puni:kotlin-common-jackson:0.0.70")
   testImplementation("org.springframework.boot:spring-boot-starter-test") {
     exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
   }

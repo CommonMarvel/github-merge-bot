@@ -5,16 +5,16 @@ import commonmarvel.githubmergebot.core.data.dto.PullRequestMergeRequest
 import commonmarvel.githubmergebot.core.data.dto.PullRequestUpdateBranchRequest
 import commonmarvel.githubmergebot.core.data.dto.SearchPullRequest
 import commonmarvel.githubmergebot.core.data.dto.SearchPullRequestItem
+import commonmarvel.githubmergebot.core.extension.jsonStringToObject
 import commonmarvel.githubmergebot.core.properties.GithubProperties
 import commonmarvel.githubmergebot.core.service.GithubService
-import java.net.URI
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpHeaders
 import org.springframework.http.RequestEntity
 import org.springframework.stereotype.Service
 import org.springframework.web.client.RestTemplate
 import org.springframework.web.client.exchange
-import puni.extension.jackson.jsonStringToObject
+import java.net.URI
 
 @Service
 class GithubServiceImpl(
